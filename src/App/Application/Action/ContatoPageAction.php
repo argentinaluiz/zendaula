@@ -2,6 +2,9 @@
 
 namespace App\Application\Action;
 
+use App\Domain\Entity\Customer;
+use App\Domain\Persistence\RepositoryInterface;
+use Doctrine\ORM\EntityManager;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Zend\Diactoros\Response\HtmlResponse;
@@ -17,17 +20,38 @@ class ContatoPageAction
 {
     private $template;
 
-    public function __construct(Template\TemplateRendererInterface $template = null)
+    /**
+     * @var EntityManager
+     */
+    private $manager;
+
+    /**
+     * @var RepositoryInterface
+     */
+    private $RepositoryInterface;
+
+
+    public function __construct(RepositoryInterface $RepositoryInterface, Template\TemplateRendererInterface $template = null)
     {
         $this->template = $template;
+        $this->RepositoryInterface = $RepositoryInterface;
     }
 
     public function __invoke(ServerRequestInterface $request, ResponseInterface $response, callable $next = null)
     {
+        $customer = new Customer();
+        $customer
+            ->setName('Jorge Pereira')
+            ->setEmail('jorge_pereira_2@yahoo.com.br');
+
+        $this->RepositoryInterface->create($customer);
+
         $data           = [];
-        $data['data']   = 'Aqui entraria a mensagem da ação... ... ... ...';
+        $data['data']   = 'Custumer criado com sucesso...';
 
         return new HtmlResponse($this->template->render("app::contato", $data));
     }
 }
+
+
 

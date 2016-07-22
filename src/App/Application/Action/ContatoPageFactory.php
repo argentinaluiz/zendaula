@@ -17,7 +17,7 @@ class ContatoPageFactory
             ? $container->get(TemplateRendererInterface::class)
             : null;
 
-        return new ContatoPageAction($container->get(RepositoryInterface::class), $template); //$router,
+        return new ContatoPageAction($container->get(CustomerRepositoryInterface::class), $template); //$router,
     }
 }
 

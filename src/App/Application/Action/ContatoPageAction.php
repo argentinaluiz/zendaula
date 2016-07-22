@@ -24,17 +24,16 @@ class ContatoPageAction
      * @var EntityManager
      */
     private $manager;
-
     /**
-     * @var RepositoryInterface
+     * @var CustomerRepositoryInterface
      */
-    private $RepositoryInterface;
+    private $repository;
 
 
-    public function __construct(RepositoryInterface $RepositoryInterface, Template\TemplateRendererInterface $template = null)
+    public function __construct(CustomerRepositoryInterface $repository, Template\TemplateRendererInterface $template = null)
     {
         $this->template = $template;
-        $this->RepositoryInterface = $RepositoryInterface;
+        $this->repository = $repository;
     }
 
     public function __invoke(ServerRequestInterface $request, ResponseInterface $response, callable $next = null)

@@ -2,10 +2,10 @@
 
 namespace App\Infrastructure\Persistence\Doctrine\Repository;
 
-use App\Domain\Persistence\RepositoryInterface;
+use App\Domain\Persistence\CustumerRepositoryInterface;
 use Doctrine\ORM\EntityRepository;
 
-class CustomerRepository extends EntityRepository implements RepositoryInterface
+class CustomerRepository extends EntityRepository implements CustumerRepositoryInterface
 {
     public function create($entity)
     {

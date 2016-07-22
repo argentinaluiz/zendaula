@@ -1,9 +1,16 @@
 <?php
+use App\Domain\Service\FlashMessageInterface;
+use App\Infrastructure\Service\FlashMessageFactory;
+use Aura\Session\Session;
+use DaMess\Factory\AuraSessionFactory;
 use Zend\Expressive\Application;
 use Zend\Expressive\Container\ApplicationFactory;
 use Zend\Expressive\Helper;
 use App\Infrastructure\Persistence\Doctrine\Repository\CustomerRepositoryFactory;
-use App\Domain\Persistence\RepositoryInterface;
+use App\Domain\Persistence\CustomerRepositoryInterface;
+use Zend\Expressive\Helper\ServerUrlHelper;
+use Zend\Expressive\Helper\UrlHelper;
+use Zend\Expressive\Helper\UrlHelperFactory;
 
 return [
     // Provides application-wide services.
@@ -15,13 +22,15 @@ return [
         // class name.
         'invokables' => [
             // Fully\Qualified\InterfaceName::class => Fully\Qualified\ClassName::class,
-            Helper\ServerUrlHelper::class => Helper\ServerUrlHelper::class,
+            ServerUrlHelper::class => ServerUrlHelper::class,
         ],
         // Use 'factories' for services provided by callbacks/factory classes.
         'factories' => [
             Application::class => ApplicationFactory::class,
-            Helper\UrlHelper::class => Helper\UrlHelperFactory::class,
-            RepositoryInterface::class => CustomerRepositoryFactory::class,
+            UrlHelper::class => UrlHelperFactory::class,
+            CustomerRepositoryInterface::class => CustomerRepositoryFactory::class,
+            Session::class => AuraSessionFactory::class,
+            FlashMessageInterface::class => FlashMessageFactory::class,
         ],
         'aliases' => [
             'configuration' => 'config', //Doctrine needs a service called Configuration

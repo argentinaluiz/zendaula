@@ -10,7 +10,7 @@ return [
                     'port'      => '3306',
                     'user' 		=> 'root',
                     'password' 	=> 'root',
-                    'dbname' 	=> 'auladoctrine',
+                    'dbname' 	=> 'code_php7',
                     'driverOptions'   => [
                         \PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES 'UTF8'"
                     ]

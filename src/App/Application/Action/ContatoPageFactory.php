@@ -6,7 +6,7 @@ use Interop\Container\ContainerInterface;
 use Zend\Expressive\Router\RouterInterface;
 use Zend\Expressive\Template\TemplateRendererInterface;
 use Doctrine\ORM\EntityManager;
-use App\Domain\Persistence\RepositoryInterface;
+use App\Domain\Persistence\CustomerRepositoryInterface;
 
 class ContatoPageFactory
 {

@@ -2,7 +2,7 @@
 
 namespace App\Domain\Persistence;
 
-interface CustumerRepositoryInterface extends RepositoryInterface
+interface CustomerRepositoryInterface extends RepositoryInterface
 {
 }
 

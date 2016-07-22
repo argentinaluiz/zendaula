@@ -1,0 +1,2 @@
+[22-Jul-2016 21:15:08 UTC] PHP Fatal error:  Interface 'App\Domain\Persistence\CustumerRepositoryInterface' not found in C:\Users\Luiz\Documents\Code.education\Projetos alunos\php7\jorgepereira\src\App\Infrastructure\Persistence\Doctrine\Repository\CustomerRepository.php on line 8
+[22-Jul-2016 21:15:48 UTC] PHP Fatal error:  Interface 'App\Domain\Persistence\CustomerRepositoryInterface' not found in C:\Users\Luiz\Documents\Code.education\Projetos alunos\php7\jorgepereira\src\App\Infrastructure\Persistence\Doctrine\Repository\CustomerRepository.php on line 8

@@ -15,6 +15,7 @@ use Zend\Expressive\Plates\PlatesRenderer;
 use Zend\Expressive\Twig\TwigRenderer;
 use Zend\Expressive\ZendView\ZendViewRenderer;
 use Zend\Stratigility\MiddlewareInterface;
+use App\Domain\Persistence\CustomerRepositoryInterface;
 
 class ContatoPageAction
 {

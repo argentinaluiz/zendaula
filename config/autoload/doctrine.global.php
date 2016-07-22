@@ -22,7 +22,7 @@ return [
             'App_driver' => array(
                 'class' => 'Doctrine\ORM\Mapping\Driver\YamlDriver',
                 'cache' => 'array',
-                'paths' => [__DIR__ . '../../src/App/Infrastructure/Persistence/Doctrine/ORM']
+                'paths' => [__DIR__ . '/../../src/App/Infrastructure/Persistence/Doctrine/ORM']
             ),
 
             'orm_default' => [

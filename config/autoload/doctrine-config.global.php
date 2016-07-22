@@ -16,7 +16,8 @@ $doctrineModuleConfig['dependencies'] = $doctrineModuleConfig['service_manager']
 unset($doctrineModuleConfig['service_manager']);
 unset($doctrineModuleConfig['dependencies']['factories']['doctrine.cli']);
 
-$doctrineModuleConfig['dependencies']['factories']['doctrine.cli'] = function(\Interop\Container\ContainerInterface $container){
+$doctrineModuleConfig['dependencies']['factories']['doctrine.cli'] =
+    function(\Interop\Container\ContainerInterface $container){
     $cli = new Application;
     $cli->setName('DoctrineModule Command Line Interface');
     $cli->setVersion(Version::VERSION);
